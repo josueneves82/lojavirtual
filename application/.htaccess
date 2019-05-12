@@ -1,0 +1,13 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI} !^(index\.php|files|images|js|css|robots\.txt|favicon\.ico)
+
+RewriteCond %{HTTP_HOST} ^mysite.com/ttnf/
+RewriteRule (.*) http://www.mysite.com/ttnf/$1 [R=301,L]
+
+RewriteBase /ttnf/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+php_flag display_errors On

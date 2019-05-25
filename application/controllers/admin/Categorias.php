@@ -61,13 +61,13 @@ class Categorias extends CI_Controller {
 				)
 			*/
 			$dadosCategorias['nome_categoria'] = $this->input->post('nome_categoria');
-			$dadosCategorias['ativo'] = $this->input->post('ativo');
+			$dadosCategorias['ativo_categoria'] = $this->input->post('ativo_categoria');
 
 			if ($this->input->post('id_categoria')) {
 
-				$dadosCategorias['ultima_atualizacao'] = dataDiadb();
-				$id =  $this->input->post('id_categoria');
-                $this->Categorias_model->doUpdate($dadosCategorias, $id);
+				$dadosCategorias['ultima_atualizacao_categoria'] = dataDiadb();
+				$id_categoria =  $this->input->post('id_categoria');
+                $this->Categorias_model->doUpdate($dadosCategorias, $id_categoria);
                 redirect('admin/Categorias', 'refresh');
                 
 			}

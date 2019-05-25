@@ -33,49 +33,23 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label ">CPF</label>
                     <div class="col-sm-2">
-                        <input type="text" class="form-control input_cpf" name="nome_produto" placeholder="CPF cliente" 
-                            value="input_cpf">
+                        <input type="text" class="form-control input_cpf" name="cpf_pedido" placeholder="CPF cliente">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">CATEGORIAS</label>
-                    <div class="col-sm-3">
-                    <select id="dropdown" name="id_produto" class="from-control col-sm-8">
-                            <option></option>
-                            <?php foreach ($categorias as $cat) { ?>
-
-                                <?php if ($dados){  // inicio if ?>
-                                    <option value="<?= $cat->id ?>" <?= ($cat->id == $dados->id_categoria ? ' selected="" ' : '') ?>>
-                                    <?= $cat->nome_categoria ?></option>
-                                <?php } 
-                                else{ ?>
-                                    <option value="<?= $cat->id?>"> <?= $cat->nome_categoria ?></option>
-                                <?php }  // fim if ?>
-
-                            <?php } // fim foreach ?>
-                        </select>
+                    <label class="col-sm-2 control-label ">Codigo produto </label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control " name="cod_produto" placeholder="Codigo produto">
                     </div>
                 </div>
-
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">PRODUTO</label>
-                    <select id="dropdown" name="id_produto" class="from-control col-sm-8">
-                            <option></option>
-                            <?php foreach ($pedidos as $ped) { ?>
-
-                                <?php if ($dados){  // inicio if ?>
-                                    <option value="<?= $ped->id ?>" <?= ($ped->id == $dados->id_produto ? ' selected="" ' : '') ?>>
-                                    <?= $ped->nome_produto ?></option>
-                                <?php } 
-                                else{ ?>
-                                    echo '<pre>';
-                                        print_r($ped); 
-                                <?php } // fim if ?>
-
-                            <?php } // fim foreach ?>
-                        </select>
+                    <label class="col-sm-2 control-label ">Quantidade produto </label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control col-sm-1" name="qtd_produto" placeholder="Qtd">
                     </div>
                 </div>
+
+
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                         <button type="submit" class="btn btn-primary"> <i class="fa fa-floppy-o"> </i> Salvar</button>

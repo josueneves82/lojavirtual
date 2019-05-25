@@ -25,10 +25,10 @@ class Clientes_model extends CI_Model {
     }
 
     // listar cliente id
-    public function getClienteId($id=NULL){
+    public function getClienteId($id_cliente=NULL){
 
-        if ($id) {
-            $this->db->where('id', $id);
+        if ($id_cliente) {
+            $this->db->where('id_cliente', $id_cliente);
             $this->db->limit(1);
             $query = $this->db->get('clientes');
             return $query->row();
@@ -38,7 +38,7 @@ class Clientes_model extends CI_Model {
     public function doUpdate($dados=NULL, $id_cliente=NULL){
 
         if (is_array($dados) && $id_cliente) {
-            $this->db->update('clientes', $dados, array('id' => $id_cliente));
+            $this->db->update('clientes', $dados, array('id_cliente' => $id_cliente));
 
             // verificar auteraçao no bd
             if ($this->db->affected_rows() > 0) {
@@ -54,7 +54,7 @@ class Clientes_model extends CI_Model {
     public function doDelete($id_cliente=NULL){
 
         if ($id_cliente) {
-            $this->db->delete('clientes', array('id' => $id_cliente));
+            $this->db->delete('clientes', array('id_cliente' => $id_cliente));
             
             if ($this->db->affected_rows() > 0) {
                 setMsg('msgCadastro', 'Cliente deletado com sucesso!', 'sucesso');

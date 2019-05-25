@@ -32,56 +32,54 @@
 </head>
 <body class="hold-transition login-page">
     <div class="login-box">
-    <div class="login-logo">
-        <a href="#"><b>LOGIN OBRIGATORIO</b></a>
-    </div>
-    <!-- /.login-logo -->
-    <div class="login-box-body">
-        <p class="login-box-msg">entre com seus dados de acesso</p>
-
-        <?php 
-            echo validation_errors('<p>', '</p>');
-        ?>
-
-        <form action="" method="post">
-        <div class="form-group has-feedback">
-            <input type="email" class="form-control" placeholder="Email" name="email">
-            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        <div class="login-logo">
+            <a href="#"><b>LOGIN OBRIGATORIO</b></a>
         </div>
-        <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="Senha" name="senha">
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        <!-- /.login-logo -->
+        <div class="login-box-body">
+            <p class="login-box-msg">entre com seus dados de acesso</p>
+
+            <?php 
+                echo validation_errors('<p>', '</p>');
+            ?>
+
+            <form action="" method="post">
+            <div class="form-group has-feedback">
+                <input type="email" class="form-control" placeholder="Email" name="email">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" class="form-control" placeholder="Senha" name="senha">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <div class="col-xs-8">
+                <div class="checkbox icheck">
+                    <label>
+                    <input type="checkbox" name="manter_conectado"> Manter conectado
+                    </label>
+                </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-xs-4">
+                <button type="submit" class="btn btn-primary btn-block btn-flat">LOGAR</button>
+                </div>
+                <!-- /.col -->
+            </div>
+            </form>
+            <a href="#">esqueci a senha</a><br>
         </div>
-        <div class="row">
-            <div class="col-xs-8">
-            <div class="checkbox icheck">
-                <label>
-                <input type="checkbox" name="manter_conectado"> Manter conectado
-                </label>
-            </div>
-            </div>
-            <!-- /.col -->
-            <div class="col-xs-4">
-            <button type="submit" class="btn btn-primary btn-block btn-flat">LOGAR</button>
-            </div>
-            <!-- /.col -->
-        </div>
-        </form>
-
-        <a href="#">esqueci a senha</a><br>
-
-
-    </div>
-    <!-- /.login-box-body -->
+        <!-- /.login-box-body -->
     </div>
     <!-- /.login-box -->
+
     <!-- Inicio footer --> 
     <footer class="margin-botton-60" >
         <div class=" col-md-6 text-left hidden-xs">
             <b>Loja Virtual </b> 1.0  
         </div>
         <div  class=" col-md-6 text-right hidden-xs">
-            <strong>Copyright &copy; 2018 <a href="#">Neves Devweb</a>.</strong> todos direitos reservados.
+            <strong>Copyright &copy; 2018 <a href="#">Neves Devweb</a> .todos direitos reservados.</strong> 
         </div>
 
     </footer>

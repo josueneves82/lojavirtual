@@ -41,11 +41,11 @@
                 <div class="form-group">
                     <label  class="col-sm-2 control-label">Ativo</label>
                     <div class="col-sm-4" >
-                        <select name="ativo" class="from-control">
+                        <select name="ativo_categoria" class="from-control">
 
                             <?php if ($dados){  // inicio if ?>
-                            <option value="0" <?=($dados->ativo == 0 ? 'selected=""' : '') ?>>NÃO</option>
-                            <option value="1" <?=($dados->ativo == 1 ? 'selected=""' : '') ?>>SIM</option>
+                            <option value="0" <?=($dados->ativo_categoria == 0 ? 'selected=""' : '') ?>>NÃO</option>
+                            <option value="1" <?=($dados->ativo_categoria == 1 ? 'selected=""' : '') ?>>SIM</option>
                             <?php } else{ ?>
                                 <option value="0">NÃO</option>
                                 <option value="1" selected="">SIM</option>
@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <?php if($dados) {?>
-                    <input type="hidden" name="id_categoria" value="<?= $dados->id ?>">
+                    <input type="hidden" name="id_categoria" value="<?= $dados->id_categoria ?>">
                 <?php } ?>
 
                 <div class="form-group">

@@ -38,7 +38,7 @@ class Login extends CI_Controller {
 	public function sair(){
 
 		$this->ion_auth->logout();
-		redirect('admin/Login', 'refresh');
+		redirect('loja/loja', 'refresh');
 		
 	}
 

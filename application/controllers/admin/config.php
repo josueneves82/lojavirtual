@@ -8,7 +8,7 @@ class Config extends CI_Controller {
 		parent::__construct();
 
 		if (!$this->ion_auth->logged_in()){
-			redirect('admin/Login');
+			redirect('loja/loja');
 			}
         
         $this->load->model('Config_loja_model');
@@ -54,7 +54,7 @@ class Config extends CI_Controller {
 
             $this->Config_loja_model->doUpdate($dados);
 
-            redirect('admin/config', refresh);
+            redirect('admin/config', 'refresh');
         }
         else {
             $data['titulo']   ='Configuração da Loja';

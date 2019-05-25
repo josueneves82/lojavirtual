@@ -34,24 +34,24 @@
                     </tr>
                     <tr>
                         <td class="text-justify h5"><b>E-mail:</b></td>
-                        <td><?php echo $dados->email ?></td>
+                        <td><?php echo $dados->email_marca ?></td>
                     </tr>
                     <tr>
                         <td class="text-justify h5"><b>Telefone:</b></td>
-                        <td><?php echo $dados->contato ?></td>
+                        <td><?php echo $dados->contato_marca ?></td>
                     </tr>
                     <tr>
                         <td class="text-justify h5"><b>CNPJ:</b></td>
-                        <td><?php echo $dados->cnpj ?></td>
+                        <td><?php echo $dados->cnpj_marca ?></td>
                     </tr>
                     <tr>
                         <td class="text-justify h5"><b>Ativo:</b></td>
-                        <td><?php echo ($dados->ativo == 1 ? '<span class="label label-success"><i class="fa fa-check"></i></span>' :
+                        <td><?php echo ($dados->ativo_marca == 1 ? '<span class="label label-success"><i class="fa fa-check"></i></span>' :
                              '<span class="label label-danger"><i class="fa fa-times"></i></span>' )?></td>
                     </tr>
                     <tr>
                         <td class="text-justify h5"><b>Data cadastro:</b></td>
-                        <td><?php echo formatDataView($dados->data_cadastro) ?></td>
+                        <td><?php echo formatDataView($dados->data_cadastro_marca) ?></td>
                     </tr>
                 </tbody>
                 </thead >

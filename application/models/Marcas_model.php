@@ -14,7 +14,7 @@ class Marcas_model extends CI_Model {
     public function getMarcaId($id_marca=NULL){
 
         if ($id_marca) {
-            $this->db->where('id', $id_marca);
+            $this->db->where('id_marca', $id_marca);
             $this->db->limit(1);
             $query = $this->db->get('marcas');
             return $query->row();
@@ -39,7 +39,7 @@ class Marcas_model extends CI_Model {
     public function doUpdate($dados=NULL, $id_marca=NULL){
 
         if (is_array($dados) && $id_marca) {
-            $this->db->update('marcas', $dados, array('id' => $id_marca));
+            $this->db->update('marcas', $dados, array('id_marca' => $id_marca));
 
             // verificar auteraçao no bd
             if ($this->db->affected_rows() > 0) {
@@ -55,7 +55,7 @@ class Marcas_model extends CI_Model {
     public function doDelete($id_marca=NULL){
 
         if ($id_marca) {
-            $this->db->delete('marcas', array('id' => $id_marca));
+            $this->db->delete('marcas', array('id_marca' => $id_marca));
             
             if ($this->db->affected_rows() > 0) {
                 setMsg('msgCadastro', 'Fornecedor deletado com sucesso!', 'sucesso');

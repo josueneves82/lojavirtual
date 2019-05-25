@@ -48,29 +48,30 @@ class Marcas extends CI_Controller {
     public function core(){
 
         $this->form_validation->set_rules('nome_marca', 'Nome', 'required');
-        $this->form_validation->set_rules('email', 'E-mail', 'required|valid_email');
-        $this->form_validation->set_rules('contato', 'Telefone', 'required');
+        $this->form_validation->set_rules('email_marca', 'E-mail', 'required|valid_email');
+        $this->form_validation->set_rules('contato_marca', 'Telefone', 'required');
+        $this->form_validation->set_rules('cnpj_marca', 'CNPJ', 'required');
        
     
         if ($this->form_validation->run() == TRUE) {
             $dadosMarca['nome_marca'] = $this->input->post('nome_marca');
-            $dadosMarca['email'] = $this->input->post('email');
-            $dadosMarca['contato'] = ($this->input->post('contato'));
-            $dadosMarca['cnpj'] = $this->input->post('cnpj');
-            $dadosMarca['ativo'] = $this->input->post('ativo');
+            $dadosMarca['email_marca'] = $this->input->post('email_marca');
+            $dadosMarca['contato_marca'] = ($this->input->post('contato_marca'));
+            $dadosMarca['cnpj_marca'] = $this->input->post('cnpj_marca');
+            $dadosMarca['ativo_marca'] = $this->input->post('ativo_marca');
           
     
             if ($this->input->post('id_marca')) {
                 //atualiza cadastro
-                $dadosMarca['ultima_atualizacao'] = dataDiadb();
-                $id =  $this->input->post('id_marca');
-                $this->Marcas_model->doUpdate($dadosMarca, $id);
+                $dadosMarca['ultima_atualizacao_marca'] = dataDiadb();
+                $id_marca =  $this->input->post('id_marca');
+                $this->Marcas_model->doUpdate($dadosMarca, $id_marca);
                 redirect('admin/marcas', 'refresh');
     
             }
             else {
                 // novo cadastro
-                $dadosMarca['data_cadastro'] = dataDiadb();
+                $dadosMarca['data_cadastro_marca'] = dataDiadb();
                 $this->Marcas_model->doInsert($dadosMarca);
                 redirect('admin/marcas', 'refresh');
             }

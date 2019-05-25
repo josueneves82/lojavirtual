@@ -33,29 +33,29 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Nome</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" name="nome" placeholder="Nome" 
-                            value="<?php echo ( $dados != NULL ?$dados->nome : set_value('nome'))?>">
+                        <input type="text" class="form-control" name="nome_cliente" placeholder="Nome" 
+                            value="<?php echo ( $dados != NULL ?$dados->nome_cliente : set_value('nome_cliente'))?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">E-mail</label>
                     <div class="col-sm-8">
-                        <input type="email" class="form-control" name="email" placeholder="E-mail" 
-                            value="<?php echo ( $dados != NULL ?$dados->email : set_value('email'))?>">
+                        <input type="email" class="form-control" name="email_cliente" placeholder="E-mail" 
+                            value="<?php echo ( $dados != NULL ?$dados->email_cliente : set_value('email_cliente'))?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Senha</label>
                     <div class="col-sm-8">
-                        <input type="password" class="form-control" name="senha" placeholder="Senha " 
-                            value="<?php echo ( $dados != NULL ?$dados->senha : set_value('senha'))?>">
+                        <input type="password" class="form-control" name="senha_cliente" placeholder="Senha " 
+                            value="<?php echo ( $dados != NULL ?$dados->senha_cliente : set_value('senha_cliente'))?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">CPF</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control input_cpf" name="cpf" placeholder="CPF" 
-                            value="<?php echo ( $dados != NULL ?$dados->cpf : set_value('cpf'))?>">
+                        <input type="text" class="form-control input_cpf" name="cpf_cliente" placeholder="CPF" 
+                            value="<?php echo ( $dados != NULL ?$dados->cpf_cliente : set_value('cpf_cliente'))?>">
                     </div>
                 </div>
                 <div class="form-group">
@@ -68,67 +68,67 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Telefone</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control input_telefone" name="telefone" placeholder="Telefone" 
-                            value="<?php echo ( $dados != NULL ?$dados->telefone : set_value('telefone'))?>">
+                        <input type="text" class="form-control input_telefone" name="telefone_cliente" placeholder="Telefone" 
+                            value="<?php echo ( $dados != NULL ?$dados->telefone_cliente : set_value('telefone_cliente'))?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">CEP</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control input_cep" name="cep" placeholder="CEP" 
-                            value="<?php echo ( $dados != NULL ?$dados->cep : set_value('cep'))?>">
+                        <input type="text" class="form-control input_cep" name="cep_cliente" placeholder="CEP" 
+                            value="<?php echo ( $dados != NULL ?$dados->cep_cliente : set_value('cep_cliente'))?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Endereço</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" name="endereco" placeholder="Endereço" 
-                            value="<?php echo ( $dados != NULL ?$dados->endereco : set_value('endereco'))?>">
+                        <input type="text" class="form-control" name="end_cliente" placeholder="Endereço" 
+                            value="<?php echo ( $dados != NULL ?$dados->end_cliente : set_value('end_cliente'))?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">N°</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" name="numero" placeholder="N°" 
-                            value="<?php echo ( $dados != NULL ?$dados->numero : set_value('numero'))?>">
+                        <input type="text" class="form-control" name="num_cliente" placeholder="N°" 
+                            value="<?php echo ( $dados != NULL ?$dados->num_cliente : set_value('num_cliente'))?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Bairro</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" name="bairro" placeholder="Bairro" 
-                            value="<?php echo ( $dados != NULL ?$dados->bairro : set_value('bairro'))?>">
+                        <input type="text" class="form-control" name="bairro_cliente" placeholder="Bairro" 
+                            value="<?php echo ( $dados != NULL ?$dados->bairro_cliente : set_value('bairro_cliente'))?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Complemento</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" name="complemento" placeholder="Complemento" 
-                            value="<?php echo ( $dados != NULL ?$dados->complemento : set_value('complemento'))?>">
+                        <input type="text" class="form-control" name="compl_cliente" placeholder="Complemento" 
+                            value="<?php echo ( $dados != NULL ?$dados->compl_cliente : set_value('compl_cliente'))?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Cidade</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" name="cidade" placeholder="Cidade" 
-                            value="<?php echo ( $dados != NULL ?$dados->cidade : set_value('cidade'))?>">
+                        <input type="text" class="form-control" name="cidade_cliente" placeholder="Cidade" 
+                            value="<?php echo ( $dados != NULL ?$dados->cidade_cliente : set_value('cidade_cliente'))?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Estado</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" name="estado" placeholder="Estado" 
-                            value="<?php echo ( $dados != NULL ?$dados->estado : set_value('estado'))?>">
+                        <input type="text" class="form-control" name="estado_cliente" placeholder="Estado" 
+                            value="<?php echo ( $dados != NULL ?$dados->estado_cliente : set_value('estado_cliente'))?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label  class="col-sm-2 control-label">Ativo</label>
                     <div class="col-sm-4" >
-                        <select name="ativo" class="from-control">
+                        <select name="ativo_cliente" class="from-control">
 
                             <?php if ($dados){  // inicio if ?>
-                            <option value="0" <?=($dados->ativo == 0 ? 'selected=""' : '') ?>>NÃO</option>
-                            <option value="1" <?=($dados->ativo == 1 ? 'selected=""' : '') ?>>SIM</option>
+                            <option value="0" <?=($dados->ativo_cliente == 0 ? 'selected=""' : '') ?>>NÃO</option>
+                            <option value="1" <?=($dados->ativo_cliente == 1 ? 'selected=""' : '') ?>>SIM</option>
                             <?php } else{ ?>
                                 <option value="0">NÃO</option>
                                 <option value="1" selected="">SIM</option>
@@ -137,7 +137,7 @@
                     </div>
                 </div>
                 <?php if($dados) {?>
-                    <input type="hidden" name="id_cliente" value="<?= $dados->id ?>">
+                    <input type="hidden" name="id_cliente" value="<?= $dados->id_cliente ?>">
                 <?php } ?>
 
                 <div class="form-group">

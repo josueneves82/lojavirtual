@@ -39,11 +39,11 @@
                     </tr>
                     <tr>
                         <td class="text-justify h5"><b>Valor produto:</b></td>
-                        <td><?php echo formataMoedaReal($dados->valor) ?></td>
+                        <td><?php echo formataMoedaReal($dados->valor_produto) ?></td>
                     </tr>
                     <tr>
                         <td class="text-justify h5"><b>Estoque:</b></td>
-                        <td><?php echo $dados->estoque ?></td>
+                        <td><?php echo $dados->estoque_produto ?></td>
                     </tr>
                     <tr>
                         <td class="text-justify h5"><b>Fornecedor:</b></td>
@@ -55,20 +55,20 @@
                     </tr>
                     <tr>
                         <td class="text-justify h5"><b>Produto destaque:</b></td>
-                        <td><?php echo $dados->destaque == 1 ? '<span class="label label-success">SIM</i></span>' :
+                        <td><?php echo $dados->destaque_produto == 1 ? '<span class="label label-success">SIM</i></span>' :
                              '<span class="label label-danger">NÃO</span>' ?></td>
                     </tr>
                     <tr>
                         <td class="text-justify h5"><b>Informação do produto:</b></td>
-                        <td><?php echo $dados->informacao ?></td>
+                        <td><?php echo $dados->informacao_produto ?></td>
                     </tr>
                     <tr>
                         <td class="text-justify h5"><b>Data cadastro:</b></td>
-                        <td><?php echo formatDataView($dados->data_cadastro) ?></td>
+                        <td><?php echo formatDataView($dados->data_cadastro_produto) ?></td>
                     </tr>
                     <tr>
                         <td class="text-justify h5"><b>Ativo:</b></td>
-                        <td><?php echo ($dados->ativo == 1 ? '<span class="label label-success"><i class="fa fa-check"></i></span>' :
+                        <td><?php echo ($dados->ativo_produto == 1 ? '<span class="label label-success"><i class="fa fa-check"></i></span>' :
                              '<span class="label label-danger"><i class="fa fa-times"></i></span>' )?></td>
                     </tr>
 

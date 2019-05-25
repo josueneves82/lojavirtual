@@ -28,7 +28,7 @@
                     <tr class="text-center">
                         <td>Nome</td>
                         <td>E-mail</td>
-                        <td>Contato</td>
+                        <td>Telefone</td>
                         <td>Status</td>
                         <td >Opções</td>
                     </tr>
@@ -37,18 +37,18 @@
                 <?php foreach ($marcas as $row) { ?>
                         <tr>
                             <td><?php echo $row->nome_marca ?></td>
-                            <td><?php echo $row->email ?></td>
-                            <td><?php echo $row->contato ?></td>
+                            <td><?php echo $row->email_marca ?></td>
+                            <td><?php echo $row->contato_marca ?></td>
     
-                            <td class="text-center"><?php echo ($row->ativo == 1 ? '<span class="label label-success"><i class="fa fa-check"></i></span>' :
+                            <td class="text-center"><?php echo ($row->ativo_marca == 1 ? '<span class="label label-success"><i class="fa fa-check"></i></span>' :
                              '<span class="label label-danger"><i class="fa fa-times"></i></span>' )?></td>    
     
                             <td class="text-right">
-                                <a href="<?php echo base_url('admin/marcas/busca/'. $row->id )?>" 
+                                <a href="<?php echo base_url('admin/marcas/busca/'. $row->id_marca )?>" 
                                     title="Editar cliente" class="btn btn-info"><i class="fa fa-search"></i></a> |
-                                <a href="<?php echo base_url('admin/marcas/modulo/'. $row->id )?>" 
+                                <a href="<?php echo base_url('admin/marcas/modulo/'. $row->id_marca )?>" 
                                     title="Editar cliente" class="btn btn-warning"><i class="fa fa-pencil-square-o"></i></a> |
-                                <a href="<?php echo base_url('admin/marcas/del/'. $row->id )?>" 
+                                <a href="<?php echo base_url('admin/marcas/del/'. $row->id_marca )?>" 
                                     title="Deletar cliente" class="btn btn-danger btn-apagar-cliente"><i class="fa fa-trash-o"></i></a>
                             </td>
                         </tr>

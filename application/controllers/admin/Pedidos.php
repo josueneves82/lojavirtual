@@ -14,24 +14,36 @@ class Pedidos extends CI_Controller {
         $this->load->model('Pedidos_model');
         
     }
-    public function index(){
-        $dados = NULL;
 
-        $data['titulo'] = 'Realizar pedidos';
-        $data['dados'] = $dados;
-        $data['produtos'] = $this->Pedidos_model->geIdProdutos();
-        $data['categorias'] = $this->Pedidos_model->geIdCategorias();
-        $data['view']='admin/pedidos/pedidos';
-        $data['nave']  = array('titulo' => 'Listar produtos', 'link' => 'admin/produtos'); 
+    public function index(){
+        $data['titulo'] = ' pedidos';
+        $data['view']='admin/pedidos/pedidos'; 
+
         $this->load->view('admin/templates/index', $data);
     }
-    
-    public function listaPedidos() {
-        //$data['titulo'] = 'Lista de produtos';
-        $data['view']='admin/pedidos/pedidos'; 
-        $data['pedidos']= $this->Pedidos_model->getProdutos(); 
 
-        $this->load->view('admin/templates/index', $data);
+    public function core(){
 
-       }
+        $this->form_validation->set_rules('cod_produto', 'Codigo produto', 'required');
+        $this->form_validation->set_rules('qtd_produto', 'Qtd produto', 'required');
+        $this->form_validation->set_rules('cpf_pedido', 'CPF cliente', 'required');
+
+
+
+        if ($this->form_validation->run() == TRUE) {
+            $dadosPedido['cpf_pedido'] = $this->input->post('cpf_pedido');
+            $dadosPedido['cod_produto'] = $this->input->post('cod_produto');
+            $dadosPedido['qtd_produto'] = ($this->input->post('qtd_produto'));
+            $dadosPedido['data_pedido'] = dataDiadb();
+            $this->Pedidos_model->doInsert($dadosPedido);
+            redirect('admin/pedidos', 'refresh');
+        }
+        else {
+            $this->modulo();
+        }
+
+    }
+
+
+
 }

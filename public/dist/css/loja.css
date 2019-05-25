@@ -1,0 +1,107 @@
+.conteudo-header {
+
+    padding: 45px;
+    background: rgb(255, 215, 0);
+    border-bottom: 4px solid rgb(255, 234, 116);
+}
+.conteudo-header .logo {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 20px;
+    color: #1C1C1C;
+
+}
+.navbar-inverse {
+    background: #1C1C1C;
+    border-bottom: 4px solid rgb(138, 135, 135);
+}
+.rodape {
+    margin-top: 20px;
+    background-color: #1C1C1C;
+    border-top: 2px solid rgb(138, 135, 135);
+    color: #fff;
+    padding: 40px;
+}
+.carousel-foto {
+    margin-top: 20px;
+    background: rgba(255, 230, 0, 0.123);
+    height: 370px;
+}
+img {
+    text-align: center;
+    width: 500px;
+    padding: 25px;
+    display: block;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.redes {
+    color: #FFD700;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: -10px;
+    padding: 10px;
+}
+.Copyright {
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 10px;
+    padding: 20px;
+}
+.empresa {
+    font-weight: bold;
+    font-size: 20px;
+    color: #FFD700;
+}
+.login {
+    font-weight: bold;
+    font-size: 13px;
+    right: 10px;
+    color: #1C1C1C; 
+}
+.vitrine-produto-destaque {
+    margin-top: 40px;
+}
+.thumbnail {
+    height: 400px;
+    border: rgba(205, 155, 29, 0.541) 1px solid;
+}
+.thumbnail img {
+    margin-top: -20px;
+    height: 330px;
+    width: 1000px;
+}
+.caption {
+    text-align: center;
+}
+.caption h3 {
+    color: #8B0000;
+    font-size: 15px;
+    margin-top: -20px;
+}
+#btn-logar {
+    left: 290px;
+    top: -30px;    
+}
+#btn-conf {
+    background: rgb(1, 2, 19);
+    width: 50px;
+    color: #fff;
+    font-size: 10px;
+    padding: 5px;
+}
+#form-conf {
+    left: 90px;
+    top: -30px;
+}
+#checkbox {
+    left: 95px;
+    top: -30px; 
+ 
+}
+#navbar {
+    background: #1C1C1C;
+}
+
+

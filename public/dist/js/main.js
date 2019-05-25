@@ -1,5 +1,34 @@
 $(document).ready(function () {
 
+        // upload de foto
+        $("#upload_fotos").uploadFile({
+                url:"http://localhost:8080/admin/produtos/upload",
+                fileName:"foto_produto",
+                returnType:'json',
+                onSuccess:function(files,data,xhr,pd){
+                        $('.ajax-file-upload-statusbar').hide();
+                        if (data.erro == 0) {
+                                $('.retorno_foto_produto').append('<div class="col-sm-3 img_foto_view"><img src="http://localhost:8080/../upload/foto_produtos/'+ data.file_name +'"><input type="hidden" value="'+ data.file_name +'" name="foto_produto[]"><a href="#" class="btn btn-danger btn-apagar-foto-produto"><i class="fa fa-trash-o"></i> Apagar</a></div>');
+                        }
+                        else{
+                                alert(data.msg);
+                        }
+                },
+                onError: function(files,status,errMsg,pd){
+                        alert(files +'<br>'+errMsg);
+                }
+
+        });
+        //  confirmar antes de apagar
+        $(document).on('click', '.btn-apagar-foto-produto', function(){
+                if (confirm("Deseja deletar este foto")) {
+                        $(this).parent().remove();
+                }
+                else {
+                        return false;
+                }
+        });
+
         //alerta delete cliente
         $('.btn-apagar-cliente').on('click', function () {
 
@@ -67,18 +96,4 @@ $(document).ready(function () {
         });
 
         $('.sidebar-menu').tree()
-});
-
-// teste
-$(document).ready(function () {
-        $("#dropdown").change(function () {
-                //alert("Selection: " + $("option:selected", this).val() + ":" + $("option:selected", this).text());
-                $.ajax({
-                        url: '../../admin/pedidos/listaPedidos',
-                        data: { id_categoria: $("option:selected", this).val()},
-                        success: function (response) {//response is value returned from php (for your example it's "bye bye"
-                                alert(response);
-                        }
-                });
-        });
 });

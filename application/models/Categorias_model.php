@@ -25,7 +25,7 @@ class Categorias_model extends CI_Model{
     public function getCategoriaId($id_categoria=NULL){
 
         if ($id_categoria) {
-            $this->db->where('id', $id_categoria);
+            $this->db->where('id_categoria', $id_categoria);
             $query= $this->db->get('categorias');
             return $query->row();
         }
@@ -35,7 +35,7 @@ class Categorias_model extends CI_Model{
 
         if (is_array($dados)) {
             
-            $this->db->update('categorias', $dados, array('id' => $id_categoria));
+            $this->db->update('categorias', $dados, array('id_categoria' => $id_categoria));
             if ($this->db->affected_rows() > 0) {
                 setMsg('msgCadastro', 'Categoria atualizado com sucesso!', 'sucesso');
             }
@@ -48,7 +48,7 @@ class Categorias_model extends CI_Model{
     public function doDelete($id_categoria=NULL){
 
         if ($id_categoria) {
-            $this->db->delete('categorias', array('id' => $id_categoria));
+            $this->db->delete('categorias', array('id_categoria' => $id_categoria));
             
             if ($this->db->affected_rows() > 0) {
                 setMsg('msgCadastro', 'Categoria deletado com sucesso!', 'sucesso');

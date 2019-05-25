@@ -38,20 +38,20 @@
 
                     <?php foreach ($clientes as $row) { ?>
                     <tr>
-                        <td><?php echo $row->nome ?></td>
-                        <td><?php echo $row->email ?></td>
-                        <td><?php echo $row->telefone ?></td>
-                        <td><?php echo $row->cpf ?></td>
+                        <td><?php echo $row->nome_cliente ?></td>
+                        <td><?php echo $row->email_cliente ?></td>
+                        <td><?php echo $row->telefone_cliente ?></td>
+                        <td><?php echo $row->cpf_cliente ?></td>
 
-                        <td class="text-center"><?php echo ($row->ativo == 1 ? '<span class="label label-success"><i class="fa fa-check"></i></span>' :
+                        <td class="text-center"><?php echo ($row->ativo_cliente == 1 ? '<span class="label label-success"><i class="fa fa-check"></i></span>' :
                          '<span class="label label-danger"><i class="fa fa-times"></i></span>' )?></td>    
 
                         <td class="text-right">
-                            <a href="<?php echo base_url('admin/clientes/busca/'. $row->id )?>" 
+                            <a href="<?php echo base_url('admin/clientes/busca/'. $row->id_cliente )?>" 
                             title="Editar cliente" class="btn btn-info"><i class="fa fa-search"></i></a> |
-                            <a href="<?php echo base_url('admin/clientes/modulo/'. $row->id )?>" 
+                            <a href="<?php echo base_url('admin/clientes/modulo/'. $row->id_cliente )?>" 
                             title="Editar cliente" class="btn btn-warning"><i class="fa fa-pencil"></i></a> |
-                            <a href="<?php echo base_url('admin/clientes/del/'. $row->id )?>" 
+                            <a href="<?php echo base_url('admin/clientes/del/'. $row->id_cliente )?>" 
                             title="Deletar cliente" class="btn btn-danger btn-apagar-cliente"><i class="fa fa-trash-o"></i></a>
                         </td>
                     </tr>

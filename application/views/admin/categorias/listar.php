@@ -33,18 +33,18 @@
 
                 <tbody>
 
-                    <?php foreach ($Categorias as $cat) { ?>
+                    <?php foreach ($Categorias as $row) { ?>
                     <tr>
-                        <td><?php echo $cat->nome_categoria ?></td>
-                        <td class="text-center"><?php echo ($cat->ativo == 1 ? '<span class="label label-success"><i class="fa fa-check"></i></span>' :
+                        <td><?php echo $row->nome_categoria ?></td>
+                        <td class="text-center"><?php echo ($row->ativo_categoria == 1 ? '<span class="label label-success"><i class="fa fa-check"></i></span>' :
                          '<span class="label label-danger"><i class="fa fa-times"></i></span>' )?></td>    
 
                         <td class="text-right">
-                            <a href="<?php echo base_url('admin/categorias/busca/'. $cat->id )?>" 
+                            <a href="<?php echo base_url('admin/categorias/busca/'. $row->id_categoria )?>" 
                             title="Editar categoria" class="btn btn-info"><i class="fa fa-search"></i></a> |
-                            <a href="<?php echo base_url('admin/categorias/modulo/'. $cat->id )?>" 
+                            <a href="<?php echo base_url('admin/categorias/modulo/'. $row->id_categoria )?>" 
                             title="Editar categoria" class="btn btn-warning"><i class="fa fa-pencil"></i></a> |
-                            <a href="<?php echo base_url('admin/categorias/del/'. $cat->id )?>" 
+                            <a href="<?php echo base_url('admin/categorias/del/'. $row->id_categoria )?>" 
                             title="Deletar categoria" class="btn btn-danger btn-apagar-cliente"><i class="fa fa-trash-o"></i></a>
                         </td>
                     </tr>

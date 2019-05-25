@@ -26,9 +26,11 @@
             <table class="table table-responsive table-bordered table_listar_data-table">
                 <thead>
                     <tr class="text-center">
+                        <td>Codigo</td>
                         <td>Nome</td>
                         <td>Categoria</td>
                         <td>Fornecedor</td>
+                        <td>Prod. destaque</td>
                         <td>Valor</td>
                         <td>Estoque</td>
                         <td>Status</td>
@@ -39,21 +41,23 @@
 
                     <?php foreach ($produtos as $produto) { ?>
                     <tr class="text-center">
+                        <td><?php echo $produto->cod_produto ?></td>
                         <td><?php echo $produto->nome_produto ?></td>
                         <td><?php echo $produto->nome_categoria ?></td>
                         <td><?php echo $produto->nome_marca ?></td>
-                        <td><?php echo formataMoedaReal($produto->valor, TRUE) ?></td>
-                        <td><?php echo $produto->estoque ?></td>
+                        <td><?php echo $produto->destaque_produto ?></td>
+                        <td><?php echo formataMoedaReal($produto->valor_produto, TRUE) ?></td>
+                        <td><?php echo $produto->estoque_produto ?></td>
 
-                        <td><?php echo ($produto->ativo == 1 ? '<span class="label label-success"><i class="fa fa-check"></i></span>' :
+                        <td><?php echo ($produto->ativo_produto == 1 ? '<span class="label label-success"><i class="fa fa-check"></i></span>' :
                          '<span class="label label-danger"><i class="fa fa-times"></i></span>' )?></td>    
 
                         <td class="text-right">
-                            <a href="<?php echo base_url('admin/produtos/busca/'. $produto->id )?>" 
+                            <a href="<?php echo base_url('admin/produtos/busca/'. $produto->id_produto )?>" 
                             title="Editar cliente" class="btn btn-info"><i class="fa fa-search"></i></a> |
-                            <a href="<?php echo base_url('admin/produtos/modulo/'. $produto->id )?>" 
+                            <a href="<?php echo base_url('admin/produtos/modulo/'. $produto->id_produto )?>" 
                             title="Editar cliente" class="btn btn-warning"><i class="fa fa-pencil"></i></a> |
-                            <a href="<?php echo base_url('admin/produtos/del/'. $produto->id )?>" 
+                            <a href="<?php echo base_url('admin/produtos/del/'. $produto->id_produto )?>" 
                             title="Deletar cliente" class="btn btn-danger btn-apagar-cliente"><i class="fa fa-trash-o"></i></a>
                         </td>
                     </tr>

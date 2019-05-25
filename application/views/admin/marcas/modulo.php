@@ -40,35 +40,35 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">E-mail</label>
                     <div class="col-sm-8">
-                        <input type="email" class="form-control" name="email" placeholder="E-mail" 
-                            value="<?php echo ( $dados != NULL ?$dados->email : set_value('email'))?>">
+                        <input type="email" class="form-control" name="email_marca" placeholder="E-mail" 
+                            value="<?php echo ( $dados != NULL ?$dados->email_marca : set_value('email_marca'))?>">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Telefone</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control input_telefone" name="contato" placeholder="Telefone" 
-                            value="<?php echo ( $dados != NULL ?$dados->contato : set_value('contato'))?>">
+                        <input type="text" class="form-control input_telefone" name="contato_marca" placeholder="Telefone" 
+                            value="<?php echo ( $dados != NULL ?$dados->contato_marca : set_value('contato_marca'))?>">
                     </div>        
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label">CNPJ</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control input_cnpj " name="cnpj" placeholder="CNPJ" 
-                            value="<?php echo ( $dados != NULL ?$dados->cnpj : set_value('cnpj'))?>">
+                        <input type="text" class="form-control input_cnpj " name="cnpj_marca" placeholder="CNPJ" 
+                            value="<?php echo ( $dados != NULL ?$dados->cnpj_marca : set_value('cnpj_marca'))?>">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label  class="col-sm-2 control-label">Ativo</label>
                     <div class="col-sm-4" >
-                        <select name="ativo" class="from-control">
+                        <select name="ativo_marca" class="from-control">
 
                             <?php if ($dados){  // inicio if ?>
-                            <option value="0" <?=($dados->ativo == 0 ? 'selected=""' : '') ?>>NÃO</option>
-                            <option value="1" <?=($dados->ativo == 1 ? 'selected=""' : '') ?>>SIM</option>
+                            <option value="0" <?=($dados->ativo_marca == 0 ? 'selected=""' : '') ?>>NÃO</option>
+                            <option value="1" <?=($dados->ativo_marca == 1 ? 'selected=""' : '') ?>>SIM</option>
                             <?php } else{ ?>
                                 <option value="0">NÃO</option>
                                 <option value="1" selected="">SIM</option>
@@ -78,7 +78,7 @@
                 </div>
 
                 <?php if($dados) {?>
-                    <input type="hidden" name="id_marca" value="<?= $dados->id ?>">
+                    <input type="hidden" name="id_marca" value="<?= $dados->id_marca ?>">
                 <?php } ?>
 
                 <div class="form-group">

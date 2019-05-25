@@ -34,7 +34,7 @@
                     </tr>
                     <tr>
                         <td class="text-justify h5"><b>Ativo:</b></td>
-                        <td><?php echo ($dados->ativo == 1 ? '<span class="label label-success"><i class="fa fa-check"></i></span>' :
+                        <td><?php echo ($dados->ativo_categoria == 1 ? '<span class="label label-success"><i class="fa fa-check"></i></span>' :
                              '<span class="label label-danger"><i class="fa fa-times"></i></span>' )?></td>
                     </tr>
                 </tbody>

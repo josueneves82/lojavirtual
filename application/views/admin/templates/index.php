@@ -29,6 +29,8 @@
   <link rel="stylesheet" href="<?php echo base_url('public/dist/css/admin_loja.css') ?>">
   <!-- PLUGIN DATA-TABLE-->
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('public/data-tables/datatables.css') ?>">
+    <!-- JQUERY UPLOAD-->
+    <link rel="stylesheet" href="<?php echo base_url('public/bower_components/jquery-uploadfile/css/uploadfile.css') ?>">    
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -116,7 +118,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url('admin/pedidos') ?>"><i class="fa fa-money"></i> Pedidos</a></li>
-            <li><a href=""><i class="fa fa-line-chart"></i> Relatorio</a></li>
+            <li><a href="<?php echo base_url('admin/relatorios') ?>"><i class="fa fa-line-chart"></i> Relatorio</a></li>
           </ul>
         </li>
         <!-- Menu de configuração -->
@@ -180,5 +182,7 @@
 <script src="<?php echo base_url('public/dist/js/demo.js') ?>"></script>
 <!-- main-->
 <script src="<?php echo base_url('public/dist/js/main.js') ?>"></script>
+<!-- JQUERY UPLOAD -->
+<script src="<?php echo base_url('public/bower_components/jquery-uploadfile/js/jquery.uploadfile.min.js') ?>"></script>
 </body>
 </html>

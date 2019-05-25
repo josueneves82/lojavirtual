@@ -8,7 +8,7 @@ class Clientes extends CI_Controller {
         parent::__construct();
         
         if (!$this->ion_auth->logged_in()){
-			redirect('admin/Login');
+			redirect('loja/loja');
             }
         
         $this->load->model('Clientes_model');
@@ -49,69 +49,69 @@ class Clientes extends CI_Controller {
 
         /*Array
         (
-            [nome] => zezinho
+            [nome_cliente] => zezinho
             [email] => josueneves1982@gmail.com
             [senha] => 123123
-            [cpf] => 333.333.333-33
+            [cpf_cliente] => 333.333.333-33
             [data_nascimento] => 11/11/1111
             [telefone] => (11) 11111-1111
-            [cpe] => 11111-111
-            [endereco] => R Deusde Cardoso 160, Casa
-            [numero] => 
-            [bairro] => 
-            [complemento] => 
-            [cidade] => Porto Alegre
+            [cep_cliente] => 11111-111
+            [end_cliente] => R Deusde Cardoso 160, Casa
+            [num_cliente] => 
+            [bairro_cliente] => 
+            [compl_cliente] => 
+            [cidade_cliente] => Porto Alegre
             [estado] => RS
             [ativo] => 1
         )*/
 
-        $this->form_validation->set_rules('nome', 'Nome', 'required');
-        $this->form_validation->set_rules('email', 'E-mail', 'required|valid_email');
+        $this->form_validation->set_rules('nome_cliente', 'Nome', 'required');
+        $this->form_validation->set_rules('email_cliente', 'E-mail', 'required|valid_email');
         if ( !$this->input->post('id_cliente')) {
-            $this->form_validation->set_rules('senha', 'Senha', 'required');
+            $this->form_validation->set_rules('senha_cliente', 'Senha', 'required');
         }
         else {
-            $this->form_validation->set_rules('senha', 'Senha');
+            $this->form_validation->set_rules('senha_cliente', 'Senha');
         }
-        $this->form_validation->set_rules('cpf', 'CPF', 'required');
+        $this->form_validation->set_rules('cpf_cliente', 'CPF', 'required');
         $this->form_validation->set_rules('data_nascimento', 'Data nascimento', 'required');
-        $this->form_validation->set_rules('telefone', 'Telefone', 'required');
-        $this->form_validation->set_rules('cep', 'CEP', 'required');
-        $this->form_validation->set_rules('endereco', 'Endereço', 'required');
-        $this->form_validation->set_rules('numero', 'Numero', 'required');
-        $this->form_validation->set_rules('bairro', 'Bairro', 'required');
-        $this->form_validation->set_rules('complemento', 'Complemento', 'required');
-        $this->form_validation->set_rules('cidade', 'Cidade', 'required');
-        $this->form_validation->set_rules('estado', 'Estado', 'required');
+        $this->form_validation->set_rules('telefone_cliente', 'Telefone', 'required');
+        $this->form_validation->set_rules('cep_cliente', 'CEP', 'required');
+        $this->form_validation->set_rules('end_cliente', 'Endereço', 'required');
+        $this->form_validation->set_rules('num_cliente', 'num_cliente', 'required');
+        $this->form_validation->set_rules('bairro_cliente', 'Bairro', 'required');
+        $this->form_validation->set_rules('compl_cliente', 'Complemento', 'required');
+        $this->form_validation->set_rules('cidade_cliente', 'Cidade', 'required');
+        $this->form_validation->set_rules('estado_cliente', 'estado_cliente', 'required');
 
         if ($this->form_validation->run() == TRUE) {
-            $dadosCliente['nome'] = $this->input->post('nome');
-            $dadosCliente['cpf'] = $this->input->post('cpf');
+            $dadosCliente['nome_cliente'] = $this->input->post('nome_cliente');
+            $dadosCliente['cpf_cliente'] = $this->input->post('cpf_cliente');
             $dadosCliente['data_nascimento'] = formataDataDB($this->input->post('data_nascimento'));
-            $dadosCliente['cep'] = $this->input->post('cep');
-            $dadosCliente['endereco'] = $this->input->post('endereco');
-            $dadosCliente['numero'] = $this->input->post('numero');
-            $dadosCliente['bairro'] = $this->input->post('bairro');
-            $dadosCliente['complemento'] = $this->input->post('complemento');
-            $dadosCliente['cidade'] = $this->input->post('cidade');
-            $dadosCliente['estado'] = $this->input->post('estado');
-            $dadosCliente['email'] = $this->input->post('email');
-            $dadosCliente['senha'] = $this->input->post('senha');
-            $dadosCliente['ativo'] = $this->input->post('ativo');
-            $dadosCliente['telefone'] = $this->input->post('telefone');
+            $dadosCliente['cep_cliente'] = $this->input->post('cep_cliente');
+            $dadosCliente['end_cliente'] = $this->input->post('end_cliente');
+            $dadosCliente['num_cliente'] = $this->input->post('num_cliente');
+            $dadosCliente['bairro_cliente'] = $this->input->post('bairro_cliente');
+            $dadosCliente['compl_cliente'] = $this->input->post('compl_cliente');
+            $dadosCliente['cidade_cliente'] = $this->input->post('cidade_cliente');
+            $dadosCliente['estado_cliente'] = $this->input->post('estado_cliente');
+            $dadosCliente['email_cliente'] = $this->input->post('email_cliente');
+            $dadosCliente['senha_cliente'] = $this->input->post('senha_cliente');
+            $dadosCliente['ativo_cliente'] = $this->input->post('ativo_cliente');
+            $dadosCliente['telefone_cliente'] = $this->input->post('telefone_cliente');
             
 
             if ($this->input->post('id_cliente')) {
                 //atualiza cadastro
-                $dadosCliente['ultima_atualizacao'] = dataDiadb();
-                $id =  $this->input->post('id_cliente');
-                $this->Clientes_model->doUpdate($dadosCliente, $id);
+                $dadosCliente['ultima_atualizacao_cliente'] = dataDiadb();
+                $id_cliente =  $this->input->post('id_cliente');
+                $this->Clientes_model->doUpdate($dadosCliente, $id_cliente);
                 redirect('admin/clientes', 'refresh');
 
             }
             else {
                 // novo cadastro
-                $dadosCliente['data_cadastro'] = dataDiadb();
+                $dadosCliente['data_cadastro_cliente'] = dataDiadb();
                 $this->Clientes_model->doInsert($dadosCliente);
                 redirect('admin/clientes', 'refresh');
             }

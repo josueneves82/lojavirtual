@@ -28,6 +28,7 @@
                 <?php
                     errosValidacao();
                     getMsg('msgCadastro');
+
                 ?>
 
                 <div class="form-group">
@@ -48,34 +49,57 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Valor produto </label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" name="valor" placeholder="Valor produto" 
-                            value="<?php echo ( $dados != NULL ?$dados->valor : set_value('valor'))?>">
+                        <input type="text" class="form-control" name="valor_produto" placeholder="Valor produto" 
+                            value="<?php echo ( $dados != NULL ?$dados->valor_produto : set_value('valor_produto'))?>">
                     </div>        
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Qtd estoque</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" name="estoque" placeholder="Qtd estoque" 
-                            value="<?php echo ( $dados != NULL ?$dados->estoque : set_value('estoque'))?>">
+                        <input type="text" class="form-control" name="estoque_produto" placeholder="Qtd estoque" 
+                            value="<?php echo ( $dados != NULL ?$dados->estoque_produto : set_value('estoque_produto'))?>">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Infomação do produto</label>
+                    <label class="col-sm-2 control-label">Foto do produto</label>
                     <div class="col-sm-10">
-                        <textarea name="informacao" class="col-sm-9 control-label">
-                        <?php echo ( $dados != NULL ?$dados->informacao : set_value('informacao'))?></textarea>
+                    <div id="upload_fotos">Upload</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-10 retorno_foto_produto">
+                        <?php if ($fotos) { ?>                            
+                            <?php foreach ($fotos as $row) { ?>
+                                <div class="col-sm-3 img_foto_view">
+                                    <img src="<?= base_url('upload/foto_produtos/'.$row->foto ) ?>">
+                                    <input type="hidden" value="<?= $row->foto ?>" name="foto_produto[]">
+                                    <a href="#" class="btn btn-danger btn-apagar-foto-produto"><i class="fa fa-trash-o"></i> Apagar</a>
+                                </div>  
+                            <?php } ?>
+                        <?php } ?>
+                                                
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Descrição do produto</label>
+                    <div class="col-sm-10">
+                        <textarea name="informacao_produto">
+                        <?php echo ( $dados != NULL ?$dados->informacao_produto : set_value('informacao_produto'))?></textarea>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label  class="col-sm-2 control-label">Destacar produto</label>
                     <div class="col-sm-4" >
-                        <select name="destaque" class="from-control">
+                        <select name="destaque_produto" class="from-control">
 
                             <?php if ($dados){  // inicio if ?>
-                            <option value="0" <?=($dados->destaque == 0 ? 'selected=""' : '') ?>>NÃO</option>
-                            <option value="1" <?=($dados->destaque == 1 ? 'selected=""' : '') ?>>SIM</option>
+                            <option value="0" <?=($dados->destaque_produto == 0 ? 'selected=""' : '') ?>>NÃO</option>
+                            <option value="1" <?=($dados->destaque_produto == 1 ? 'selected=""' : '') ?>>SIM</option>
                             <?php } else{ ?>
                                 <option value="0">NÃO</option>
                                 <option value="1" selected="">SIM</option>
@@ -87,16 +111,16 @@
                 <div class="form-group">
                     <label  class="col-sm-2 control-label">Categoria</label>
                     <div class="col-sm-4" >
-                        <select name="id_categoria" class="from-control col-sm-8">
+                        <select name="id_categoria_produto" class="from-control col-sm-8">
                             <option></option>
-                            <?php foreach ($categorias as $cat) { ?>
+                            <?php foreach ($categorias as $row) { ?>
 
                                 <?php if ($dados){  // inicio if ?>
-                                    <option value="<?= $cat->id ?>" <?= ($cat->id == $dados->id_categoria ? ' selected="" ' : '') ?>>
-                                    <?= $cat->nome_categoria ?></option>
+                                    <option value="<?= $row->id_categoria ?>" <?= ($row->id_categoria == $dados->id_categoria_produto ? ' selected="" ' : '') ?>>
+                                    <?= $row->nome_categoria ?></option>
                                 <?php } 
                                 else{ ?>
-                                    <option value="<?= $cat->id?>"> <?= $cat->nome_categoria ?></option>
+                                    <option value="<?= $row->id_categoria?>"> <?= $row->nome_categoria ?></option>
                                 <?php }  // fim if ?>
 
                             <?php } // fim foreach ?>
@@ -107,16 +131,16 @@
                 <div class="form-group">
                     <label  class="col-sm-2 control-label">Fornecedor</label>
                     <div class="col-sm-4" >
-                        <select name="id_marca" class="from-control col-sm-8">
+                        <select name="id_marca_produto" class="from-control col-sm-8">
                             <option></option>
-                            <?php foreach ($marcas as $marca) { ?>
+                            <?php foreach ($marcas as $row) { ?>
 
                                 <?php if ($dados){  // inicio if ?>
-                                    <option value="<?= $marca->id ?>" <?= ($marca->id == $dados->id_marca ? ' selected="" ' : '') ?>>
-                                    <?= $marca->nome_marca ?></option>
+                                    <option value="<?= $row->id_marca ?>" <?= ($row->id_marca == $dados->id_marca_produto ? ' selected="" ' : '') ?>>
+                                    <?= $row->nome_marca ?></option>
                                 <?php } 
                                 else{ ?>
-                                    <option value="<?= $marca->id?>"> <?= $marca->nome_marca ?></option>
+                                    <option value="<?= $row->id_marca?>"> <?= $row->nome_marca ?></option>
                                 <?php }  // fim if ?>
 
                             <?php } // fim foreach ?> 
@@ -127,11 +151,11 @@
                 <div class="form-group">
                     <label  class="col-sm-2 control-label">Ativo</label>
                     <div class="col-sm-4" >
-                        <select name="ativo" class="from-control">
+                        <select name="ativo_produto" class="from-control">
 
                             <?php if ($dados){  // inicio if ?>
-                            <option value="0" <?=($dados->ativo == 0 ? 'selected=""' : '') ?>>NÃO</option>
-                            <option value="1" <?=($dados->ativo == 1 ? 'selected=""' : '') ?>>SIM</option>
+                            <option value="0" <?=($dados->ativo_produto == 0 ? 'selected=""' : '') ?>>NÃO</option>
+                            <option value="1" <?=($dados->ativo_produto == 1 ? 'selected=""' : '') ?>>SIM</option>
                             <?php } else{ ?>
                                 <option value="0">NÃO</option>
                                 <option value="1" selected="">SIM</option>
@@ -141,7 +165,7 @@
                 </div>
 
                 <?php if($dados) {?>
-                    <input type="hidden" name="id_produto" value="<?= $dados->id ?>">
+                    <input type="hidden" name="id_produto" value="<?= $dados->id_produto ?>">
                 <?php } ?>
 
                 <div class="form-group">
